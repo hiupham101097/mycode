@@ -1,18 +1,54 @@
-import logo from './logo.svg';
-import './App.css';
+import './login.css';
+import React, { memo, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useCookies } from 'react-cookie'
+import { USER } from '../ultil/user';
 
-function App() {
+
+const Login = () => {
+  const navigate = useNavigate();
+  const [email, setEmail] = useState();
+  const [pass, setPass] = useState();
+  const [cookies, setCookie] = useCookies(['access_token', 'refresh_token'])
+
+
+
+  async function handleSubmit(email, pass) {
+    if (email === USER.USER.email && pass === USER.USER.pass) {
+      let expires = new Date();
+      expires.setTime(expires.getTime() + 1000);
+      valueSetCookie(USER.USER.access_token, USER.USER.refresh_token, expires)
+    }
+  }
+
+  async function valueSetCookie(token, enc, exp) {
+    setCookie('access_token', token, { path: '/', exp })
+    setCookie('refresh_token', enc, { path: '/', exp })
+    // document.cookie = cookies.access_token + cookies.refresh_token;
+    var abc =  navigate('/home');
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
+    <div className="Login">
+      <header className="Login-header">
         <div class="container">
           <div class="heading">Sign In</div>
 
           <form action="" class="form">
-            <input required="" class="input" type="email" name="email" id="email" placeholder="E-mail"></input>
-            <input required="" class="input" type="password" name="password" id="password" placeholder="Password"></input>
+            <input required="" class="input"
+              type="email" name="email"
+              id="email" placeholder="E-mail"
+              value={email} onChange={(e) => setEmail(e.target.value)}
+            />
+
+            <input required="" class="input"
+              type="password" name="password"
+              id="password" placeholder="Password"
+              value={pass} onChange={(e) => setPass(e.target.value)}
+            />
             <span class="forgot-password"><a href="#">Forgot Password ?</a></span>
-            <input class="login-button" type="submit" value="Sign In"></input>
+            <input class="login-button" type="submit"
+              value="Sign In" onClick={() => handleSubmit(email, pass)} />
           </form>
           <div class="social-account-container">
             <span class="title">Or Sign in with</span>
@@ -40,4 +76,4 @@ function App() {
   );
 }
 
-export default App;
+export default memo(Login);
