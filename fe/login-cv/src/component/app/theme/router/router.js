@@ -10,7 +10,6 @@ import Login from '../../../login/login';
 
 
 function getCookie(cookie) {
-    debugger
     let value = cookie.split(';');
     console.log('cookie : ', value);
     return value[0] == "" || value[0] == undefined || value == "undefined" ? null : value[0];
@@ -33,7 +32,6 @@ function RouterOutlet() {
         }
     ]
 
-    debugger
     const token = getCookie(document.cookie);
     const navigate = useNavigate();
     var test = window.location.pathname.startsWith("/");

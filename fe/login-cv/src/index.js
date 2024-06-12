@@ -17,7 +17,6 @@ function getCookie(cookie) {
 
 }
 const token = getCookie(document.cookie);
-debugger
 if (token != null && token != "null" && token != "" && token != undefined && token != "NaN") {
   root.render(
     <BrowserRouter>

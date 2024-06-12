@@ -12,7 +12,6 @@ function getCookie(cookie) {
 }
 
 function clearCookie() {
-    debugger
     document.cookie.split(";").forEach(function (c) {
         document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
     });
@@ -26,7 +25,6 @@ const Header = () => {
     const navigate = useNavigate();
 
     const handleClick = () => {
-        debugger
         navigate('/login');
         // document.navigate('/login')
     };
@@ -36,7 +34,6 @@ const Header = () => {
     }
     function handleSubmitLogout(e) {
         document.cookie = clearCookie();
-        debugger
 
         navigate('');
     }

@@ -1,4 +1,126 @@
-.title{
-    display: grid;
-    justify-content: center;
+.homepage {
+    padding-top: 30px;
+    padding-left: 75px;
+
+    .header-page {
+        display: flex;
+        justify-content: space-between;
+
+        .group1 {
+            .title {
+                text-align: start;
+                font-size: 30px;
+                color: slategrey;
+                font-weight: bold;
+            }
+
+            .body {
+                display: flex;
+                justify-content: space-between;
+
+                .c1 {
+                    display: grid;
+                    justify-content: start;
+                    text-align: start;
+                    padding-right: 10px;
+                    font-weight: bold;
+                    color: slategrey;
+
+                }
+
+                .c2 {
+                    display: grid;
+                    justify-content: start;
+                    text-align: start;
+                    color: slategrey;
+                }
+            }
+
+        }
+    }
+
+    .content {
+        text-align: start;
+        padding-top: 20px;
+        max-width: 100%;
+        width: 100%;
+
+        .title {
+            font-size: 20px;
+            font-weight: bold;
+            border-bottom: 3px solid;
+        }
+
+        .gr1 {
+
+            .value {
+                padding: 30px 0px;
+                display: grid;
+            }
+
+            .border-text {
+                padding: 30px 0px;
+
+                .value2 {
+                    display: flex;
+                    border-bottom: 1px solid #eee;
+
+                    .v1 {
+                        width: 300px;
+                    }
+
+                    .vr1 {
+                        width: 300px;
+                        font-weight: bold;
+                    }
+
+                    .name {
+                        font-weight: bold;
+                        color: slategrey;
+                    }
+
+                    .v2 {
+                        width: 600px;
+                    }
+                }
+            }
+
+            .value3 {
+                .type {
+                    padding-top: 20px;
+                    font-size: 20px;
+                    font-weight: bold;
+                }
+                .table{
+                    display: grid;
+                    .gl{
+                        display: flex;
+                        text-align: start;
+                        border: 1px solid black;
+                        .gl1{
+                            font-weight: bold;
+                            width: 200px;
+                            border-right: 1px solid black;
+                        }
+                        .gl2{
+                            padding-left: 10px;
+                            width: 80%;
+                        }
+                    }
+
+                    /* .gr{
+                        display: grid;
+                        text-align: start;
+                    } */
+                }
+            }
+
+
+        }
+
+        .add-css {
+            padding-bottom: 30px;
+        }
+
+    }
 }
